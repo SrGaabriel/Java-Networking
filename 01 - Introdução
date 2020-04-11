@@ -1,0 +1,14 @@
+TCP é um TRANSMISSION CONTROL PROCOL, o mesmo que permite as comunicações entre 2 aplicações.
+
+UDP é o USER DATAGRAM PROTOCOL, um protocolo que não necessita de conexões e permite os packets do cliente seja transmitido entre 2 
+aplicações diferentes.
+
+
+Os famosos Sockets são aqueles que fornecem uma comunicação entre dois computadores usando o TCP. O programa do cliente
+cria um socket no final de sua comunicação que tenta conectar o mesmo socket ao servidor.
+
+Quando a conexão é realizada, o servidor cria um socket no final da comunicação. Agora, finalmente o cliente e o servidor
+podem se comunicar escrevendo e lendo coisas do próprio socket.
+
+Existe uma classe que representa um Socket no próprio Java, e uma que representa um mecanismo para o servidor ouvir
+os clientes e realizar uma conexão entre ambos.
