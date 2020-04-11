@@ -1,4 +1,5 @@
-TCP é um TRANSMISSION CONTROL PROCOL, o mesmo que permite as comunicações entre 2 aplicações.
+TCP é um TRANSMISSION CONTROL PROCOL, o mesmo que permite as comunicações entre 2 aplicações, ou seja, ele é um
+protocolo de comunicação de 2 entradas, dados de todos os tipos podem ser enviados entre ambas streams ao mesmo tempo.
 
 UDP é o USER DATAGRAM PROTOCOL, um protocolo que não necessita de conexões e permite os packets do cliente seja transmitido entre 2 
 aplicações diferentes.
