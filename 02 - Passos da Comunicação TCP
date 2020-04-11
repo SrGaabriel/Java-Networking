@@ -1,0 +1,15 @@
+As etapas de uma conexão TCP, são:
+
+1- O servidor instancia um objeto ServerSocket, que pede uma porta para a comunicação ocorrer.
+
+2- O servidor apartir de Reflection, chama o método accept() do objeto Socket, que usa como parametros o nome do servidor
+e a número da porta do mesmo.
+
+3- Agora, o servidor está esperando até o cliente instanciar um Socket novamente inserindo o número da porta e o nome do servidor
+para se conectar.
+
+4- O método accept() citado a cima retorna uma referencia a um novo socket que está conectado ao socket do cliente.
+
+5- Depois que ambas conexões estiverem estabilizadas, a comunicação vai ocorrer por 2 Streams, um Input (I) e um de Output (O).
+Cada socket tem um OutputStream e um InputStream. O OutputStream do cliente está conectado ao InputStream do servidor e
+o InputStream do cliente está conectado ao OutputStream do servidor.
