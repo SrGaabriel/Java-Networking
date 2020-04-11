@@ -1,0 +1,91 @@
+Agora iremos falar da classe ServerSocket. Os construtores são:
+
+ServerSocket(int port) throws IOException
+(Tenta criar um server socket direcionado até a porta, mas se essa porta já está sendo usada por outra aplicação
+a Exception irá ocorrer)
+
+ServerSocket(int port, int backlog) throws IOException
+(Parecido com o construtor de cima, o backlog específica quantos clientes chegando irão ser guardados numa lista de
+espera.)
+
+ServerSocket(int port, int backlog, InetAddress address) throws IOException
+(O InetAdress vai específicar o IP do servidor para a conexão. O InetAdress é normalmente usado para um servidor que
+tem vários IPs, permitindo o servidor especificar quais IPs a solicitação de conexão do cliente poderá acessar.
+
+ServerSocket() throws IOException
+(Cria um ServerSocket não direcionado para lugar algúm, mas você pode usar o método bind(int port) que irá servir
+igual o primeiro construtor visto)
+
+Detalhe: Se o seu ServerSocket não mandar uma IOException, a conexão ocorreu sem erros.
+
+Agora, os métodos são:
+
+int getLocalPort()
+(Irá retornar a porta atribuida ao ServerSocket)
+
+Socket accept()
+(Como já citado, ele irá esperar um cliente conectar ao servidor na porta atribuida ou que o Socket de um "time out",
+significando que ele não recebeu retorno nenhum)
+
+void setSoTimeout(int timeout)
+(O timeout citado agora é o tempo máximo que o servidor irá esperar por uma conexão do cliente, se esse cliente ultrapassar
+o timeout, a conexão é cancelada)
+
+void bind(SocketAddress host, int backlog)
+(Irá direcionar o Socket a um servidor específico no objeto SocketAddres)
+
+Detalhe: o método accept só ira retornar um valor depois que o cliente conectar, depois da conexão irá ser criado
+um novo Socket em uma porta e irá retornar uma referencia a esse Socket.
+
+Agora uma conexão TCP existe entre o cliente e o servidor.
+
+Agora, sobre a classe Socket:
+
+Construtores:
+
+Socket(String host, int port) throws UnknownHostException, IOException
+(Esse construtor tenta conectar ao servidor especificado e a porta. Assim como o SocketServer, se não der uma Exception,
+o cliente está conectado ao servidor com sucesso)
+
+Socket(InetAddress host, int port) throws IOException
+(O construtor é igual o de cima, só muda que o host agora é um InetAddress)
+
+Socket(String host, int port, InetAddress localAddress, int localPort) throws IOException
+(Conecta até o  host e a porta inseridas e irá criar um Socket no localHost no endereço e porta também inseridos)
+
+Socket()
+(Cria um Socket padrão sem conexão nenhuma, só usar o método connect(SocketAddress host, int timeout) para conectar esse Socket a um servidor.)
+
+Métodos:
+
+void connect(SocketAddress host, int timeout) throws IOException
+(Esse método conecta seu Socket ao servidor específicado nos parametros)
+
+InetAddress getInetAddress()
+(Esse método irá retornar o endereço do outro computador que o socket está conectado)
+
+int getPort()
+(Retorna a porta atribuida ao Socket)
+
+int getLocalPort()
+(Retorna a porta que o Socket está direcionada na máquina local)
+
+SocketAddress getRemoteSocketAddress()
+(Retorna o endereço do Socket rémoto)
+
+InputStream getInputStream() throws IOException
+(Retorna o InputStream do socket)
+
+OutputStream getOutputStream() throws IOException
+(Retorna o OutputStream do socket)
+
+void close() throws IOException
+(Fecha o socket)
+
+Detalhe: Depois de fechado, o Socket não pode conectar denovo a qualquer servidor.
+
+
+
+
+
+
